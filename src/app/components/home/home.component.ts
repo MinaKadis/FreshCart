@@ -5,17 +5,25 @@ import { Category } from 'src/app/common/interfaces/category';
 import { Product } from 'src/app/common/interfaces/product';
 import { EcomdataService } from 'src/app/common/services/ecomdata.service';
 import { CardComponent } from '../card/card.component';
+import { SearchtextPipe } from 'src/app/common/pipes/searchtext.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, CarouselModule, CardComponent],
+  imports: [
+    CommonModule,
+    CarouselModule,
+    CardComponent,
+    SearchtextPipe,
+    FormsModule,
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
   constructor(private _EcomdataService: EcomdataService) {}
-
+  term: string = '';
   products: Product[] = [];
   categories!: Category[];
   whishList: any[] = [];

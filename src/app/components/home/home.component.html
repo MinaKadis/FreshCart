@@ -60,13 +60,18 @@
     </ng-container>
   </owl-carousel-o>
 </section>
-
+<input
+  type="text"
+  class="form-control w-50 mx-auto form-control-sm my-3"
+  placeholder="Search..."
+  [(ngModel)]="term"
+/>
 <section>
   <div
     class="row justify-content-center row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4"
   >
     <app-card
-      *ngFor="let product of products"
+      *ngFor="let product of products | searchtext : term | slice : 0 : 18"
       class="col"
       [cutTextNum]="2"
       [product]="product"
