@@ -61,6 +61,8 @@ export class NavbarComponent implements OnInit {
 
     this._EcomdataService.cartNumber.subscribe({
       next: (data) => {
+        console.log(data);
+
         this.cartItemNumber = data;
       },
     });

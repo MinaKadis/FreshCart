@@ -102,7 +102,7 @@
     </div>
 
     <div class="hstack justify-content-between">
-      <button
+      <!-- <button
         *ngIf="!isLoading"
         type="submit"
         [disabled]="loginForm.invalid"
@@ -113,6 +113,11 @@
 
       <button *ngIf="isLoading" type="button" disabled class="main-btn ms-auto">
         <span> <i class="fas fa-spinner fa-spin"></i> </span>
+      </button> -->
+
+      <button [disabled]="loginForm.invalid || isLoading" class="main-btn mt-2">
+        Login
+        <span *ngIf="isLoading"> <i class="fas fa-spin fa-spinner"></i> </span>
       </button>
 
       <a role="button" class="link-primary" routerLink="/forgotlogin"

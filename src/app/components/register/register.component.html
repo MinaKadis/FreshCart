@@ -232,7 +232,7 @@
       </ng-container>
     </div>
 
-    <button
+    <!-- <button
       *ngIf="!isLoading"
       type="submit"
       [disabled]="registerForm.invalid"
@@ -243,6 +243,14 @@
 
     <button *ngIf="isLoading" type="button" disabled class="main-btn ms-auto">
       <span> <i class="fas fa-spinner fa-spin"></i> </span>
+    </button> -->
+
+    <button
+      [disabled]="registerForm.invalid || isLoading"
+      class="main-btn ms-auto"
+    >
+      Register
+      <span *ngIf="isLoading"> <i class="fas fa-spin fa-spinner"></i> </span>
     </button>
 
     <p
